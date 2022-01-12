@@ -8,4 +8,15 @@
 3. web.xml에서 xmlns = "xmlns="http://JAVA.sun.com/xml/ns/javaee" 수정
 4. pom.xml 설정(helloweb 참고)
 
+﻿﻿
+### 2. applications
+1. model1 : model + jsp(controller, view)
+	-	emaillist01
+	-	guestbook01
+
+2. model2 : mvc, Model + View(jsp) + Controller(servelt)
+	-	emaillist02
+	-	guestbook02 
+	-	mysite02 
+
 ﻿
