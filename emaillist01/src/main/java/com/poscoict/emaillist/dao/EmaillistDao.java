@@ -69,4 +69,52 @@ public class EmaillistDao {
 		}
 		return result;
 	}
+
+	public boolean insert(EmaillistVo vo) {
+		boolean result = false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			// 1. JDBC 드라이버 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			// 2. 연결하기
+			String url = "jdbc:mysql://localhost:3306/webdb?characterEncoding=UTF-8&serverTimezone=UTC";
+			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			
+			// 3. SQL 준비
+			String sql = "insert into emaillist values (null, ?, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			
+			// 4. 바인딩 작업 (binding) -> 쿼리문 안에 ? 써놓고 값을 바인딩하는 것 -> 하지만 이 코드에서는 바인딩을 할 필요가 없기 때문에 건너뛴다.
+			pstmt.setString(1, vo.getFirstName()); // db는 0이 아니고 1부터 시작한다.
+			pstmt.setString(2, vo.getLastName());
+			pstmt.setString(3, vo.getEmail());
+			
+			// 5. SQL 실행
+			result = (pstmt.executeUpdate() == 1);
+			
+		} catch(ClassNotFoundException e) {
+			System.out.print("드라이버 로딩 실패 : "+e);
+		} catch(SQLException e) {
+			System.out.print("error : "+e);
+		}finally {
+			// 자원 정리
+			try {
+				if(rs != null) {
+					rs.close();
+				}
+				if(pstmt != null) {
+					pstmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }
