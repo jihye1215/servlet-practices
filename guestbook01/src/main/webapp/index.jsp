@@ -42,7 +42,7 @@
 		<tr>
 			<td colspan = 4><%= vo.getMessage().replace("\n", "<br>") %></td>
 		</tr>
-		<td><a href="/guestbook01/deleteform.jsp?no=<%= vo.getNo() %>">삭제</a></td>
+		<td><a href="<%=request.getContextPath()%>/deleteform.jsp?no=<%= vo.getNo() %>">삭제</a></td>
 	</table>
 	<%
 		count--;
