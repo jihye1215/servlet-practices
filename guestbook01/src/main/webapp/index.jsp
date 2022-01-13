@@ -38,11 +38,11 @@
 			<td><%= count %></td>  
 			<td><%= vo.getName() %></td>
 			<td><%= vo.getReg_date() %></td>
-			<td><a href="/guestbook01/deleteform.jsp?no=<%= count %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan = 4><%= vo.getMessage().replace("\n", "<br>") %></td>
 		</tr>
+		<td><a href="/guestbook01/deleteform.jsp?no=<%= vo.getNo() %>">삭제</a></td>
 	</table>
 	<%
 		count--;
