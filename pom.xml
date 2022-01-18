@@ -13,5 +13,6 @@
       <module>emaillist02</module>
       <module>guestbook02</module>
       <module>jstlel</module>
+      <module>helloweb1</module>
    </modules>
 </project>
