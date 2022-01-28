@@ -3,7 +3,7 @@
 <%@page import="com.poscoict.guestbook.vo.GuestbookVo"%>
 
 <%
-	request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 	String nostring = request.getParameter("no");
 	Long no = Long.parseLong(nostring);
 	String password = request.getParameter("password");
@@ -12,5 +12,4 @@
 	dao.delete(no, password);
 	
 	response.sendRedirect("/guestbook01");
-
 %>

@@ -2,9 +2,9 @@
 <%@page import="java.util.List"%>
 <%@page import="com.poscoict.guestbook.dao.GuestbookDao"%>
 <%@page import="com.poscoict.guestbook.vo.GuestbookVo"%>
-<% 
-	List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
-	GuestbookDao dao = new GuestbookDao();
+<%
+List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
+		GuestbookDao dao = new GuestbookDao();
 %>
 <html>
 <head>

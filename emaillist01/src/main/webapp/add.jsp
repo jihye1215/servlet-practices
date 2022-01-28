@@ -2,7 +2,7 @@
 <%@page import="com.poscoict.emaillist.dao.EmaillistDao"%>
 <%@page import="com.poscoict.emaillist.vo.EmaillistVo"%>
 <%
-	request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 	String firstName = request.getParameter("fn");
 	String lastName = request.getParameter("ln");
 	String email = request.getParameter("email");

@@ -2,10 +2,9 @@
 <%@page import="java.util.List"%>
 <%@page import="com.poscoict.guestbook.dao.GuestbookDao"%>
 <%@page import="com.poscoict.guestbook.vo.GuestbookVo"%>
-<% 
-	GuestbookDao dao = new GuestbookDao();
+<%
+GuestbookDao dao = new GuestbookDao();
 	List<GuestbookVo> list = dao.selectAll();
-
 %>
 <html>
 <head>
